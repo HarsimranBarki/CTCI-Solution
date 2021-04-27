@@ -106,6 +106,33 @@ class LinkedList {
     }
   }
 
+  sizeOfList() {
+    let size = 0;
+    let curr = this.head;
+    while (curr.next != null) {
+      size++;
+      curr = curr.next;
+    }
+
+    return size;
+  }
+
+  deleteMiddleNode() {
+    let size = this.sizeOfList();
+    let middle = Math.floor(size / 2);
+    let curr = this.head;
+    let index = 0;
+
+    while (curr.next != null) {
+      if (index == middle - 1) {
+        curr.next = curr.next.next;
+        return;
+      }
+      index++;
+      curr = curr.next;
+    }
+  }
+
   show() {
     let curr = this.head;
     while (curr.next != null) {
@@ -133,5 +160,5 @@ UnsortedNums.append(3);
 UnsortedNums.append(2);
 UnsortedNums.append(6);
 UnsortedNums.append(7);
-UnsortedNums.kthToLast(2);
+UnsortedNums.deleteMiddleNode(2);
 UnsortedNums.show();
