@@ -35,41 +35,24 @@ class LinkedList {
     return node;
   }
 
-  // Delete Head Of Node
-  deleteHead() {
-    if (!this.head) {
-      this.head = this.tail = null;
-    } else {
-      let oldHead = this.head;
-      this.head = oldHead.next;
-    }
-  }
-
-  // Delete Tail Of Node
-  deleteTail() {
-    if (!this.tail) {
-      this.head = this.tail = null;
-    } else {
-      let curr = this.head;
-
-      while (curr.next != this.tail) {
-        curr = curr.next;
-      }
-      this.tail = curr;
-      this.tail.next = null;
-      return curr;
-    }
-  }
-
-  sizeOfList() {
-    let size = 0;
+  // Palidrom
+  isPalindrom() {
     let curr = this.head;
-    while (curr.next != null) {
-      size++;
+    let stack = new Set();
+    while (curr != null) {
+      if (stack.has(curr.data)) {
+        stack.delete(curr.data);
+      } else {
+        stack.add(curr.data);
+      }
       curr = curr.next;
     }
 
-    return size;
+    if (stack.size <= 1) {
+      return console.log("It is a plaindrome");
+    } else {
+      return console.log("It' not");
+    }
   }
 
   show() {
@@ -88,16 +71,10 @@ class Node {
   }
 }
 
-let UnsortedNums = new LinkedList();
+// Intializing Chars
+let str = new LinkedList();
+for (let char of "racecar") {
+  str.append(char);
+}
 
-UnsortedNums.append(5);
-UnsortedNums.append(8);
-UnsortedNums.append(3);
-UnsortedNums.append(1);
-UnsortedNums.append(9);
-UnsortedNums.append(3);
-UnsortedNums.append(2);
-UnsortedNums.append(6);
-UnsortedNums.append(7);
-
-UnsortedNums.show();
+str.isPalindrom();
