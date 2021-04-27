@@ -1,8 +1,11 @@
-### CTCI #6 My Solutions Repo
+# CTCI #6 My Solutions
 
-<hr/>
+> Took help from various resources while studying
+> . Might not be the best but on of the solution
 
-#### Arrays & String
+---
+
+## Arrays & String
 
 1. [Hash Table](Arrays%20&%20Strings/hashTable.js)
 2. [Is Unique](Arrays%20&%20Strings/isUnique.js)
@@ -14,3 +17,17 @@
 8. [String Rotation](Arrays%20&%20Strings/stringRotation.js)
 9. [Urlify](Arrays%20&%20Strings/urlify.js)
 10. [Zero Matrix](Arrays%20&%20Strings/zeroMatrix.js)
+
+---
+
+## Linked List
+
+1. [Linked List](Linked%20List/LinkedList.js)
+2. [deletMiddleNode](Linked%20List/deleteMiddleNode.js)
+3. [Intersection](Linked%20List/intersection.js)
+4. [Kth To Last](Linked%20List/kthToLast.js)
+5. [Palindrome](Linked%20List/palindrome.js)
+6. [Partition](Linked%20List/parttion.js)
+7. [sumList](Linked%20List/sumList.js)
+8. [Loop Detection](Linked%20List/loopDetection.js)
+9. [Duplicate](Linked%20List/duplicate.js)
