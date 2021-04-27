@@ -31,15 +31,16 @@ class LinkedList {
   }
 
   partition(pos) {
-    let beforeHead = new Node(0);
-    let before = beforeHead;
-    let afterHead = new Node(0);
-    let after = afterHead;
+    let before = new Node(0);
+    let beforeHead = before;
+    let after = new Node(0);
+    let afterHead = after;
+
     let curr = this.head;
-    while (curr !== null) {
+
+    while (curr.next != null) {
       if (curr.data < pos) {
         before.next = curr;
-
         before = before.next;
       } else {
         after.next = curr;
@@ -49,13 +50,15 @@ class LinkedList {
       curr = curr.next;
     }
 
-    after.next = null;
     before.next = afterHead.next;
+    after.next = null;
 
     while (beforeHead != null) {
       console.log(beforeHead.data);
       beforeHead = beforeHead.next;
     }
+
+    console.log(before);
 
     console.log(before);
   }
