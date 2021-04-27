@@ -35,29 +35,25 @@ class LinkedList {
     return node;
   }
 
-  // Delete Head Of Node
-  deleteHead() {
-    if (!this.head) {
-      this.head = this.tail = null;
-    } else {
-      let oldHead = this.head;
-      this.head = oldHead.next;
+  kthToLast(pos) {
+    //assuming we don't have a size
+    let size = 0;
+    let curr = this.head;
+    while (curr.next != null) {
+      size++;
+      curr = curr.next;
     }
-  }
 
-  // Delete Tail Of Node
-  deleteTail() {
-    if (!this.tail) {
-      this.head = this.tail = null;
-    } else {
-      let curr = this.head;
+    if (pos > size) return console.log("Position Doesn't Exist");
 
-      while (curr.next != this.tail) {
-        curr = curr.next;
-      }
-      this.tail = curr;
-      this.tail.next = null;
-      return curr;
+    let elePos = size - pos;
+    let counterTwo = 0;
+
+    let currTwo = this.head;
+    while (currTwo.next != null) {
+      if (counterTwo == elePos) return console.log(currTwo.data);
+      counterTwo++;
+      currTwo = currTwo.next;
     }
   }
 
@@ -71,6 +67,8 @@ class LinkedList {
 
     return size;
   }
+
+  partition() {}
 
   show() {
     let curr = this.head;
@@ -99,5 +97,5 @@ UnsortedNums.append(3);
 UnsortedNums.append(2);
 UnsortedNums.append(6);
 UnsortedNums.append(7);
-UnsortedNums.deleteMiddleNode(2);
+UnsortedNums.kthToLast(2);
 UnsortedNums.show();

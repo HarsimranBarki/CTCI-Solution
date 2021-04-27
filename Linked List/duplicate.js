@@ -35,29 +35,26 @@ class LinkedList {
     return node;
   }
 
-  // Delete Head Of Node
-  deleteHead() {
-    if (!this.head) {
-      this.head = this.tail = null;
-    } else {
-      let oldHead = this.head;
-      this.head = oldHead.next;
-    }
-  }
+  //   Remove Duplicate
 
-  // Delete Tail Of Node
-  deleteTail() {
-    if (!this.tail) {
-      this.head = this.tail = null;
-    } else {
-      let curr = this.head;
+  removeDuplicate() {
+    if (!this.head || !this.tail) return null;
+    if (this.head == this.tail) return null;
 
-      while (curr.next != this.tail) {
-        curr = curr.next;
+    let pointerOne = this.head;
+
+    while (pointerOne.next != null) {
+      let pointerTwo = pointerOne;
+
+      while (pointerTwo.next != null) {
+        if (pointerOne.data == pointerTwo.next.data) {
+          pointerTwo.next = pointerTwo.next.next;
+        }
+
+        pointerTwo = pointerTwo.next;
       }
-      this.tail = curr;
-      this.tail.next = null;
-      return curr;
+
+      pointerOne = pointerOne.next;
     }
   }
 
@@ -99,5 +96,5 @@ UnsortedNums.append(3);
 UnsortedNums.append(2);
 UnsortedNums.append(6);
 UnsortedNums.append(7);
-UnsortedNums.deleteMiddleNode(2);
+UnsortedNums.removeDuplicate();
 UnsortedNums.show();

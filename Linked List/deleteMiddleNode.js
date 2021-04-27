@@ -35,32 +35,6 @@ class LinkedList {
     return node;
   }
 
-  // Delete Head Of Node
-  deleteHead() {
-    if (!this.head) {
-      this.head = this.tail = null;
-    } else {
-      let oldHead = this.head;
-      this.head = oldHead.next;
-    }
-  }
-
-  // Delete Tail Of Node
-  deleteTail() {
-    if (!this.tail) {
-      this.head = this.tail = null;
-    } else {
-      let curr = this.head;
-
-      while (curr.next != this.tail) {
-        curr = curr.next;
-      }
-      this.tail = curr;
-      this.tail.next = null;
-      return curr;
-    }
-  }
-
   sizeOfList() {
     let size = 0;
     let curr = this.head;
@@ -70,6 +44,22 @@ class LinkedList {
     }
 
     return size;
+  }
+
+  deleteMiddleNode() {
+    let size = this.sizeOfList();
+    let middle = Math.floor(size / 2);
+    let curr = this.head;
+    let index = 0;
+
+    while (curr.next != null) {
+      if (index == middle - 1) {
+        curr.next = curr.next.next;
+        return;
+      }
+      index++;
+      curr = curr.next;
+    }
   }
 
   show() {
