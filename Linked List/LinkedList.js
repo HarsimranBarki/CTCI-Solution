@@ -133,6 +133,8 @@ class LinkedList {
     }
   }
 
+  partition() {}
+
   show() {
     let curr = this.head;
     while (curr.next != null) {
