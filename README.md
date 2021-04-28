@@ -41,3 +41,4 @@
 3. [Stack Min](Stacks%20&%20Queues/stackMin.js)
 4. [Three In One](Stacks%20&%20Queues/threeInOne.js)
 5. [Stack Of Plates](Stacks%20&%20Queues/stackOfPlates.js)
+6. [Queue Using Stack](Stacks%20&%20Queues/queueStack.js)
