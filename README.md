@@ -31,3 +31,10 @@
 7. [sumList](Linked%20List/sumList.js)
 8. [Loop Detection](Linked%20List/loopDetection.js)
 9. [Duplicate](Linked%20List/duplicate.js)
+
+---
+
+## Stacks & Queues
+
+1. [Stacks](Stacks%20&%20Queues/stack.js)
+2. [Queueu](Stacks%20&%20Queues/queue.js)
