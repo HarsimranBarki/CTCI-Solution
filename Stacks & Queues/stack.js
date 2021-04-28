@@ -1,45 +1,32 @@
 class Stack {
   constructor() {
-    this.storage = [];
+    this.storage = {};
     this.size = 0;
   }
 
   push(value) {
-    this.storage.push(value);
     this.size++;
+    this.storage[this.size] = value;
+    return console.log(this.storage);
   }
 
-  pop() {
-    if (this.isEmpty()) return console.log("Empty");
-    this.storage.pop();
+  pop(value) {
+    if (this.size == 0) return;
+    delete this.storage[this.size];
     this.size--;
+    return console.log(this.storage);
   }
 
   peek() {
-    if (this.isEmpty()) return console.log("Empty");
-    let strg = this.storage;
-    return console.log(strg[strg.length - 1]);
-  }
-
-  isEmpty() {
-    return this.size == 0 ? true : false;
-  }
-
-  print() {
-    this.storage.forEach((data) => {
-      console.log(data);
-    });
+    return console.log(this.storage[this.size]);
   }
 }
 
 let Basket = new Stack();
 
-Basket.push("Ice Cream");
-Basket.push("Sunglasses");
 Basket.push("Chocolate");
-Basket.push("Olive Oil");
+Basket.push("Icecream");
+Basket.push("Orange");
+Basket.push("Papapaya");
 
-Basket.print();
-Basket.pop();
 Basket.peek();
-console.log(Basket);
