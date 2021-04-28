@@ -40,3 +40,4 @@
 2. [Queueu](Stacks%20&%20Queues/queue.js)
 3. [Stack Min](Stacks%20&%20Queues/stackMin.js)
 4. [Three In One](Stacks%20&%20Queues/threeInOne.js)
+5. [Stack Of Plates](Stacks%20&%20Queues/stackOfPlates.js)
