@@ -77,7 +77,7 @@ class AnimalShelter {
         return console.log(currCat.data);
       }
     } else {
-      return console.log("No Dogs Availaible");
+      return console.log("No Cats Availaible");
     }
   }
 }
