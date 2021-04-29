@@ -21,20 +21,22 @@ class Tree {
   find(value) {
     this.root.search(value);
   }
-
-  average() {
-    let res = this.root.getAverage(this.root);
+  invert() {
+    let res = this.root.flip(this.root);
     console.log(res);
   }
 }
 
 class Node {
   constructor(value) {
-    this.left = this.right = null;
     this.value = value;
+    this.left = this.right = null;
   }
 
   addNode(node) {
+    if ((this.root = null)) {
+      return root;
+    }
     if (node.value < this.value) {
       if (this.left != null) {
         this.left.addNode(node);
@@ -78,28 +80,39 @@ class Node {
     }
   }
 
-  getAverage(root) {
-    const queue = [];
-    const averagePerLevel = [];
-    queue.push(root);
-    while (queue.length) {
-      let sum = 0;
-      // Save the length value to calculate the average after getting the sum of all values in at that level
-      let levelLength = queue.length;
-      for (let i = 0; i < levelLength; i++) {
-        let node = queue.shift();
-        sum += node.val;
-        if (node.left) queue.push(node.left);
-        if (node.right) queue.push(node.right);
-      }
-      averagePerLevel.push(sum / levelLength);
+  flip(root) {
+    if (!root) {
+      return null;
     }
-    return averagePerLevel;
+
+    this.flip(root.left);
+    this.flip(root.right);
+
+    if (!root.left && !root.right) {
+      return root;
+    }
+
+    if (root.left || root.right) {
+      let temp = root.left;
+      root.left = root.right;
+      root.right = temp;
+    }
+
+    return root;
   }
 }
 
 let tree = new Tree();
 
+tree.addValue(4);
+tree.addValue(2);
+tree.addValue(7);
+tree.addValue(1);
 tree.addValue(3);
+tree.addValue(6);
+tree.addValue(9);
+// tree.traverse();
 
-tree.average();
+console.log(tree.root);
+console.log("-----");
+tree.invert();
